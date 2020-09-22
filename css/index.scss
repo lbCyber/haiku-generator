@@ -1,0 +1,282 @@
+$darkGrey: #3b3b3f;
+$faintBlue: #9c97c8;
+$faintGrey: #A3B2C4;
+$darkSlate: #484a5f;
+$lightBlue: #48A0F0;
+$red: #F33;
+
+/*  TOP CONTENT */
+
+.topSection {
+  padding-top:120px;
+  height:100vh;
+  width:100%;
+}
+
+.topContent {
+  display:flex;
+  flex-direction:column;
+  width:60%;
+  justify-content:center;
+  text-align:right;
+  text-shadow:0 0 2px #000;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 15px 15px 25px 25px;
+  position:relative;
+}
+
+.topContentBox { 
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.downOne {
+  display: block;
+  position: relative;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: 50px;
+  border-radius: 50px;
+  background-image: linear-gradient(0, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.8)), url(../assets/downarrows.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: overlay;
+  z-index: 1;
+  border: 3px solid $faintGrey;
+  &:hover {
+    background-image: linear-gradient(0, rgba(155, 155, 155, 0.3) 25%, rgba(155, 155, 155, 0.7)), url(../assets/downarrows.svg);
+  }
+}
+
+
+/*  BOTTOM SECTION (HAIKU GENERATOR) */
+
+.bottomSection {
+  height:100vh;
+  width:100%;
+  position:absolute;
+  top:0;
+  overflow-x:hidden;
+}
+
+  /*  HAIKU CONTENT */
+
+  .haiku {
+  align-items: center;
+  background-image: url('../assets/grey.jpg');
+  display: flex;
+  height: calc(100vh - 120px);
+  justify-content: center;
+  left: 0;
+  margin: 120px 0 0;
+  min-height:510px;
+  position: relative;
+  z-index: 5;
+  background-size: cover;
+  top:150%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.haikuPos {
+  display: flex;
+  justify-content: center;
+  min-height:300px;
+  position: relative;
+  width: 100%;
+  left: 0;
+  transition: transform .75s, min-width 1.25s;
+  &::before {
+    content: '';
+    width: 0;
+    height: 125px;
+    display: block;
+    position: absolute;
+    top: -10%;
+    right: 50%;
+    transform: perspective(100px) rotateX(25deg);
+    box-shadow: 0 0 150px 50px rgba(255,255,255,0.5);
+    pointer-events:none;
+  }
+}
+
+.haikuContainer {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px ridge rgba(255, 255, 255, 0.5);
+  box-shadow: 0 75px 150px #000;
+  background-color: $darkGrey;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: 250px;
+  min-height: 300px;
+}
+
+.haikuContent {
+  font:1em Special Elite, serif;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  background-image:radial-gradient(at center, transparent, transparent);
+  opacity:0;
+  overflow:hidden;
+  p {
+    text-align:center;
+    text-shadow:0 0 10px #000;
+    font-size:1.2em;
+    margin:15% auto;
+    z-index:10;
+    background-image: radial-gradient(at center, rgba(5, 5, 5, 0.6) 10%, transparent 50%);
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.haikuBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.makeVisible {
+  opacity:1;
+  transition:opacity .5s, background-image .5s;
+}
+
+/*  AFTERWORD (SOCIAL MEDIA BOX)  */
+
+.afterWord {
+  position: relative;
+  opacity:1;
+  transition: left 1s .5s, width .25s .5s, min-width .25s .5s, margin-left 1s .5s, margin-right 1s .5s, opacity .5s;
+}
+
+.fadeAfterWord {
+  opacity:0;
+}
+
+.box1 {
+  h2 {
+    font-size:4rem;
+  }
+  p {
+    font-size:1.3rem;
+  }
+}
+
+.box2 {
+  background: #fff;
+  border-radius: 15px;
+  color: black;
+  text-align: center;
+  padding:5px;
+  p {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+}
+
+.poemLink {
+  width:75%;
+}
+
+.copyButton {
+  border: none;
+  background: none;
+  color: $lightBlue;
+  font-size: 2em;
+  &:hover {
+    color:$darkGrey;
+  }
+}
+
+.clipboard::after {
+  content: 'content saved to clipboard!';
+  font-weight:800;
+  opacity:1;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  bottom: 27%;
+  color: $red;
+  font-size: 1rem;
+  animation: clipboardFade 5s forwards; 
+}
+
+.socialButtons {
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-end;
+  iframe {
+    margin-left:10px;
+  }
+}
+
+.genButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-transform: uppercase;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgba(78, 151, 233, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  cursor: default;
+  &:hover {
+    background-color: $lightBlue;
+    border: 2px solid rgba(255,255,255,.5);
+    font-weight:800;
+  }
+}
+
+/*  SECTION MANIPULATORS  */
+
+.remove {
+  display:none;
+}
+
+.overflowToggle {
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.bottomScrollUp {
+  top:0;
+}
+
+.bottomScrollTransition {
+  transition:top 1s;
+  overflow-y: hidden;
+}
+
+/*  ANIMATION KEYFRAMES  */
+
+@keyframes clipboardFade {
+  0% { opacity:1; }
+  50% { opacity:1; }
+  100% { opacity:0; }
+}
+
+@import "partials/desktop";
+@import "partials/tablet";
+@import "partials/mobile";

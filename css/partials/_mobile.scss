@@ -1,0 +1,187 @@
+@media all and (max-width:480px) {
+
+/*  RESPONSIVENESS MANIPULATORS */
+
+  .responsive_RemoveGeneral {
+    display:none;
+  }
+
+  .default_topNavItem {
+    display:none;
+  }
+
+  .responsive_topNavItem {
+    display:block;
+  }
+
+/*  BASE STYLES */
+  
+  body {
+    min-width:250px;
+    overflow-x:auto;
+    font-size:1.2em
+  }
+
+  h1 {
+    line-height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  main {
+    height:100vh;
+  }
+
+/*  DISCRETE STYLES */
+
+  .wrapper:not(.topContentBox) {
+    max-width: 450px;
+    margin:0 auto;
+    height:100%;
+  }
+
+/*  HEADER  */
+
+  header {
+    height: 80px;
+    padding: 20px 0 0 0;
+  }
+
+  .topNav {
+    width:100%;
+  }
+  
+  .topNavItem, .currentNavItem {
+    border-left: 3px double rgba(255, 255, 255, 0.2);
+    border-right: 3px double rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    padding-top: 12.5%;
+    width: 100px;
+    text-align: center;
+    margin: 0 10px;
+    height:40px;
+  }
+
+  .topNavItem {
+    background-image: radial-gradient(ellipse at center,rgba(255,255,255,0.1), rgba(255,255,255,0));
+  }
+
+  .currentNavItem {
+    background-image: radial-gradient(ellipse at center,rgba(0,0,0,0), rgba(0,0,0,0.2));
+  }
+
+  /*  AXOLOTL LOGO  */
+
+  .axoLogo {
+    display:none;
+  }
+
+  .bubbles {
+    display:none;
+  }
+
+  .axoLogo {
+    transform:scale(.6);
+  }
+
+  /*  HAIKU CONTENT */
+
+  .topSection {
+    height:calc(100vh - 40px);
+    padding-top:80px;
+  }
+
+  .topContent {
+    width:100%;
+    height:calc(100vh - 120px);
+    border-radius:0;
+    text-align:justify;
+    padding:30px 30px 40px;
+    justify-content:flex-start;
+    overflow-y:auto;
+    h1,h3 {
+      text-align:center;
+    }
+  }
+
+  .downOne {
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+
+  .bottomSection {
+    height:calc(100vh - 40px);
+    overflow:hidden;
+    margin-bottom:40px;
+    min-width:350px;
+  }
+
+  .haiku {
+    flex-direction: column;
+    height: calc(100vh - 120px);
+    width: 100%;
+    margin:80px 0 0;
+  }
+  
+  .haikuPos {
+    top: 0;
+    min-height:calc(100vh - 160px);
+    margin-top:210px;
+    transition:min-height 1.25s, top 1.25s, margin-top 1.25s;
+    &::before {
+      display:none;
+    }
+  }
+
+  .afterWord {
+    width: 90%;
+    margin: 0;
+    left:0;
+    top:40px;
+    opacity:0;
+    transition:opacity 1s;
+    min-height:250px;
+    h2 {
+      font-size:3rem;
+    }
+    h3 {
+      font-size:1.3rem;
+    }
+    p {
+      font-size:1.2rem;
+    }
+  }
+
+/*  FOOTER  */
+
+  footer {
+    position:absolute;
+    height:40px;
+    padding:10px 0;
+    opacity:1;
+    text-align: center;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    a {
+      color:$lightBlue;
+      text-decoration:underline;
+    }
+  }
+
+/*  SECTION MANIPULATORS  */
+
+  .squeezeSection {
+    top: 25px;
+    min-height: 60%;
+    margin-top:0;
+  }
+  
+  .overflowToggle {
+    pointer-events:none;
+  }
+
+  .growSection {
+    opacity:1;
+  }
+}

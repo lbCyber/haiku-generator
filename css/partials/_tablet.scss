@@ -1,0 +1,163 @@
+@media all and (min-width:481px) and (max-width:799px) {
+  
+/*  RESPONSIVENESS MANIPULATORS */
+  
+  .responsive_RemoveGeneral {
+    display:none;
+  }
+
+  .default_topNavItem {
+    display:none;
+  }
+
+  .responsive_topNavItem {
+    display:block;
+  }
+
+/*  BASE STYLES */
+
+  main {
+    height:100vh;
+  }
+
+/*  DISCRETE STYLES */
+
+  .wrapper:not(.topContentBox) {
+    max-width: 650px;
+    margin:0 auto;
+    height:100%;
+  }
+
+/*  HEADER  */
+
+  header {
+    padding:0 5px;
+  }
+
+  /*  AXOLOTL LOGO  */
+
+  .axoLogo {
+    transform:scale(.6);
+  }
+
+  .bubbles {
+    display:none;
+  }
+
+  .topNav {
+    width:70%;
+    padding-top:20px;
+  }
+
+  .topNavItem, .currentNavItem {
+    border-left: 3px double rgba(255, 255, 255, 0.2);
+    border-right: 3px double rgba(255, 255, 255, 0.2);
+    height: 50px;
+    padding-top: 15px;
+    font-size:1.2rem;
+  }
+
+  .topNavItem {
+    background-image: radial-gradient(ellipse at center,rgba(255,255,255,0.1), rgba(255,255,255,0));
+  }
+
+  .currentNavItem {
+    background-image: radial-gradient(ellipse at center,rgba(0,0,0,0), rgba(0,0,0,0.2));
+  }
+
+/*  HAIKU CONTENT */
+
+  .topSection {
+    height:calc(100vh - 40px);
+  }
+
+  .topContent {
+    width:100%;
+    height:calc(100vh - 160px);
+    border-radius:0;
+    padding:30px 30px 40px;
+    justify-content:flex-start;
+    overflow-y:auto;
+  }
+
+  .frontText {
+    text-align:justify;
+  }
+
+  .downOne {
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+
+  .bottomSection {
+    height:calc(100vh - 40px);
+    overflow:hidden;
+    margin-bottom:40px;
+  }
+
+  .haiku {
+    flex-direction: column;
+    height: calc(100vh - 160px);
+    width: 100%;
+  }
+  
+  .haikuPos {
+    top: 0;
+    min-height:calc(100vh - 160px);
+    margin-top:250px;
+    transition:min-height 1.25s, top 1.25s, margin-top 1.25s;
+    &::before {
+      display:none;
+    }
+  }
+
+  .afterWord {
+    width: 90%;
+    margin: 0;
+    left:0;
+    top:40px;
+    opacity:0;
+    transition:opacity 1s;
+    min-height:250px;
+    h2 {
+      font-size:3rem;
+    }
+    h3 {
+      font-size:1.3rem;
+    }
+    p {
+      font-size:1.2rem;
+    }
+  }
+  
+/*  FOOTER  */
+  
+  footer {
+    position:absolute;
+    height:40px;
+    padding:10px 0;
+    opacity:1;
+    a {
+      color:$lightBlue;
+      text-decoration:underline;
+    }
+  }
+
+/*  SECTION MANIPULATORS  */
+
+  .squeezeSection {
+    top: 20px;
+    min-height: 60%;
+    margin-top:0;
+  }
+
+  .overflowToggle {
+    pointer-events:none;
+  }
+
+  .growSection {
+    opacity:1;
+  }
+}

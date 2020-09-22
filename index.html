@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lintbox - Haiku Generator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.cookie.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script type="text/javascript" src="js/grabber.js"></script>
+  <script type="text/javascript" src="js/ripple.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite|Heebo" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/index.min.css">
+  <link rel="stylesheet" href="css/frog.min.css">
+  <meta name="twitter:dnt" content="on">
+</head>
+
+<body>
+  <div class="preamble">
+    <div class="preambleContainer">
+      <h1>Hey there!</h1>
+      <p>Thanks for stopping by!</p>
+      <p>Please note that this project is still a work in progress, and as a result it may be loaded with potential bugs and layout problems... but hopefully not for long!</p>
+      <a class="preambleButton">Got it.</a>
+    </div>
+  </div>
+  <div id="fb-root"></div>
+  <header>
+    <div class="axoLogo">
+      <div class="axolotl" onClick=refresh()></div>
+      <div class="bubbles bub1"></div>
+      <div class="bubbles bub2"></div>
+      <div class="bubbles bub3"></div>
+      <div class="bubbles bub4"></div>
+      <div class="bubbles bub5"></div>
+      <div class="bubbles bub6"></div>
+      <div class="bubbles bub7"></div>
+      <div class="bubbles bub8"></div>
+    </div>
+    <h4>Lintbox.</h4>
+    <nav class="topNav">
+      <ul>
+        <li>
+          <a href="https://lintbox.com" class="topNavItem default_topNavItem">home</a>
+          <a href="https://lintbox.com" class="topNavItem responsive_topNavItem">home</a>
+          <p class="navDescription navItem1">take a gander at my other work!</p>
+        </li>
+        <li>
+          <a href="https://lintbox.com#about" class="topNavItem default_topNavItem">who</a>
+          <a href="https://lintbox.com#about" class="topNavItem responsive_topNavItem">about me</a>
+          <p class="navDescription navItem2">who do dis?</p>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="topSection">
+      <div class="pond" id="pond" onclick=Rippler(event)>
+        <img class="frog" src="./assets/frog.svg" alt="" aria-hidden />
+        <img class="lpad1" src="./assets/lpad.svg" alt="" aria-hidden />
+        <img class="lpad2" src="./assets/lpad.svg" alt="" aria-hidden />
+      </div>
+      <div class="wrapper topContentBox">
+        <div class="topContent">
+          <h1>online haiku generator</h1>
+          <h3>poetry made easy!</h3>
+          <div class="frontText">
+            <h5><strong>haiku</strong>, <em>n - hai·​ku | \ ˈhī-(ˌ)kü</em></h5>
+            <p>The haiku, or <em>'hokku'</em>, was developed in mid-17th century Japan first as the opening stanza to a larger work. It wouldn't reach prominence in the English-speaking world until the early 20th century, when Japanese-American poets and others advocated its use as art in its distilled form.</p>
+            <p>The format has remained relatively unchanged since its inception: The haiku consists of 17 syllables, or <em>'on'</em>. In English these are typically broken up into three lines, following the form of 5-7-5. Thematically, haiku can be used to express a diverse array of ideas and images, but are most often centered around descriptive images of fleeting moments of nature, or of the actions or thoughts of living things.</p>
+            <p>This generator is designed to hold true to that ideal. Each line is procedurally generated from an extensive database of pre-written content. Every haiku generated will be unique, from its content to its aesthetics. Find your favourite one and keep it in mind!</p>
+            <h3 class="center">just click below to start!</h3>
+            <a class="downOne"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bottomSection overflowToggle">
+      <div class="haiku">
+        <div class="haikuPos">
+          <div class="haikuContainer">
+            <div class="haikuContent haiku1"></div>
+            <div class="haikuContent haiku2"></div>
+            <div class="haikuContent haiku3"></div>
+          </div>
+        </div>
+        <div class="afterWord">
+          <div class="box1">
+            <h2>nice one!</h2>
+            <h3>Your haiku looks great!</h3>
+            <p>Fun fact: The chance of generating this is less than one in <span class="redtext">8,000,000,000</span>. That means there's a uniquely-generated haiku for every person on the planet, and this one's yours!</p>
+          </div> <!-- That fact is a lie right now. I haven't written all the haiku data yet! -->
+          <div class="box2 responsive_RemoveGeneral">
+            <p>Want to keep this one? Just save the URL below, or share it on social media!</p>
+            <form method="POST" name="link">
+              <input type="text" name="text" class="poemLink" value="test">
+              <button type="button" class="copyButton"><i class="fas fa-clipboard"></i></button>
+            </form>
+            <div class="socialButtons">
+              <a href="#" class="decoyTweetIt">decoy tweet</a>
+              <a href="#" class="decoyFB">decoy facebook</a>
+            </div>
+          </div>
+          <div class="socialButtons nonResponsive_RemoveGeneral">
+            <a href="#" class="decoyTweetIt">decoy tweet</a>
+            <a href="#" class="decoyFB">decoy facebook</a>
+          </div>
+          <a href="index.html" class="genButton">Generate another!</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Haiku Generator / Lintbox - © <a href="mailto:paul@lintbox.com">Paul R.</a> - 2019</p>
+  </footer>
+  <script>
+    const refresh = () => {
+      window.location.reload();
+    }
+    $(function ($) {
+      if ($.cookie("haikugenWelcome")) {
+        $(".preamble").css('display', 'none');
+      } else {
+        $(".preamble").css('display', 'flex');
+      }
+      $('.preambleButton').on('click', function () {
+        $.cookie("haikugenWelcome", "true");
+        $('.preamble').css('display', 'none');
+      });
+    });
+  </script>
+</body>
+
+</html>
