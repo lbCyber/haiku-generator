@@ -113,13 +113,15 @@
     </section>
   </main>
   <footer>
-    <p>Haiku Generator / Lintbox - © <a href="mailto:paul@lintbox.com">Paul R.</a> - 2019</p>
+    <p id="copyright">Haiku Generator / Lintbox - © Paul R.</p>
   </footer>
   <script>
     const refresh = () => {
       window.location.reload();
     }
+    let d = new Date()
     $(function ($) {
+      $("#copyright").text(`Haiku Generator / Lintbox - © Paul R. - ${d.getFullYear()}`)
       if ($.cookie("haikugenWelcome")) {
         $(".preamble").css('display', 'none');
       } else {
