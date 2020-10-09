@@ -1,9 +1,3 @@
-/*
-THIS SCRIPT IS DESIGNED SPECIFICALLY FOR A HAIKU GENERATOR HTML. IT WILL NOT WORK FOR OTHER SITES!
-This script will generate haiku text from randomly-picked lines from hosted data files, as well as random video backgrounds for each
-Written entirely by Paul Rocca!
-*/
-
 const haikuData = {
   hyperlink: window.location.href.split('?')[0],
   searchParams: atob(escape(decodeURIComponent(window.location.search.replace(/['?']/, '')))).split('&'),
@@ -25,33 +19,25 @@ const haikuData = {
       }
     }
     let randomLine = Math.floor(Math.random() * getTarget(syllables).length);
-    // console.log('randomLine declared - ', randomLine)
     let randomVid;
     let pickText = line - 1;
-    // console.log(pickText)
     let pickVid = line + 2;
-    // console.log(pickVid)
 
     const pickRandomVid = () => {
       randomVid = Math.floor(Math.random() * haikuData.haikuData.background.length);
       if (randomVid >= 13 || randomVid < 0) {
         randomVid = 0
       }
-      // console.log('randomVid declared - ', randomVid)
       const catchDupes = () => {
         return haikuData.catcher.includes(randomVid);
       }
       if (catchDupes()) {
         pickRandomVid();
-        // console.log('catchDupes fired - ', catchDupes())
-        // console.log('catchDupesResult - ', randomVid)
       } else {
         haikuData.catcher[line] = randomVid;
       }
-      // console.log('Random vid finaliazed - ', randomVid)
     };
     if (haikuData.searchParams.length >= 6) {
-      // console.log('param overflow detected - ', randomLine, randomVid)
       const checkVal = (v, t) => {
         if (v !== "") {
           return v
@@ -69,22 +55,15 @@ const haikuData = {
       pickRandomVid();
     }
     let haikuLine = getTarget(syllables)[randomLine];
-    // console.log('haikuLine declared - ', haikuLine);
     if (haikuLine === undefined) {
-      // console.log('haikuLine problem discovered - ', haikuLine)
       haikuLine = getTarget(syllables)[1]
-      // console.log('haikuLine problem handled - ', haikuLine)
     } else if (haikuLine.includes('godzilla')) {
       randomVid = 'g';
     }
-    // console.log('haikuLine processed - ', haikuLine);
     $(`<video poster="./assets/webm/${randomVid}.webm" class="haikuBackground" playsinline autoplay muted loop><source src="./assets/webm/${randomVid}.webm" type="video/webm"></video>`).prependTo(`.haiku${line}`);
     $(`<p>${haikuLine}</p>`).appendTo(`.haiku${line}`);
     haikuData.urlGen[pickText] = randomLine;
-    // console.log('haikudata.text recorded - ', haikuData.urlGen[pickText]);
     haikuData.urlGen[pickVid] = randomVid;
-    // console.log('haikudata.text recorded - ', haikuData.urlGen[pickVid]);
-    // console.log('params are - ', haikuData.searchParams)
   }
 }
 //
